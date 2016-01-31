@@ -1,23 +1,21 @@
 //
-// Pranjal Mittal, Gorantla Sai Krishna
+// Numerical Integration
 //
-// NUMS, NUMT are to be specified, driver program wil specify
-// Performance = NUMS*NUMS/time
+// NUMS = Number of divisions
+// NUMT = Number of threads
+// These parameters should be passed in from an external driver program
+// Performance = NUMS*NUMS/t
+// t = Runtime of program in microseconds
 
 
 /*
-# Python program that complies and executes this program for multiple values of NUMS, NUMT
-# Save in separate file say run_project1.py
-# python run_project1.py will generate the table
-# NUMT, NUMS, runtime, volume, wtick(precision)
-
+# Driver Python program that complies and executes this program for multiple values of  NUMT
+# Save in separate file say driver_program.py
+# python driver_program.py will run 11 test cases varying number of available threads between 1 to 11
 import os
-nums_values = range(1000, 15000, 1000);
 thread_values = range(1, 12);
 for t in thread_values:
-    for n in nums_values:
-        print os.system('icpc -openmp -DNUMS=%s -DNUMT=%s numeric_integration.cpp  && ./a.out'%(str(n), str(t)))
-        # g++ -fopenmp -DNUMS=%s -DNUMT=%s project1.c  && ./a.out
+        print os.system('g++ -fopenmp -O3 -DNUMS=14000 -DNUMT=%s numeric_integration.cpp  && ./a.out'%(str(t)),)
 */
 
 #include <stdio.h>
@@ -130,4 +128,3 @@ int main( int argc, char *argv[ ] ) {
     //printf("%f", omp_get_wtick());
     return 0;
 }
-
