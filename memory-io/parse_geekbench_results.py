@@ -40,6 +40,7 @@ for l in lines:
     try:
         link = l[:-1]
         scrape(link)
-    pass:
+    except:
+        pass
         # Ignore blank lines if any
     print
